@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { flushSync } from "react-dom"
 
 export const AutoBatchEventHandler = () => {
   console.log("AutoBatchEventHandler is rendered")
@@ -7,7 +8,9 @@ export const AutoBatchEventHandler = () => {
 
   const onClickHandler = () => {
     console.log(state1)
-    setState1((prev) => prev + 1)
+    flushSync(() => {
+      setState1((prev) => prev + 1)
+    })
     console.log(state1)
     setState2((prev) => prev + 1)
   }

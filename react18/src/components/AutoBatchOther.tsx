@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { flushSync } from "react-dom";
 
 type Todo = {
   userId: number;
@@ -20,7 +21,9 @@ export const AutoBatchOther = () => {
         // イベントハンドラ以外で state 更新している。
         setTodos(data)
         setIsFinish(true)
-        setState3('hello')
+        flushSync(() => {
+          setState3('hello')
+        })
       })
   }
 
