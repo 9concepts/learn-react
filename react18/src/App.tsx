@@ -1,10 +1,12 @@
-import './App.css';
-import { UseCallbackDemo } from './components/UseCallbackDemo';
+import "./App.css";
+import { UseCallbackDemo } from "./components/UseCallbackDemo";
+import { UseStateDemo } from "./components/UseStateDemo/UseStateDemo";
 
 function App() {
   return (
     <div className="App">
-      <UseCallbackDemo />
+      {/* <UseCallbackDemo /> */}
+      <UseStateDemo />
     </div>
   );
 }
