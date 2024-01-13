@@ -3,7 +3,9 @@ import { Button } from "./Button";
 
 export const UseCallbackDemo = () => {
   const [count, setCount] = useState(0);
-  const handleClick = useCallback(() => {}, []);
+  const handleClick = useCallback(() => {
+    console.log(count)
+  }, []);
 
   return (
     <div>
