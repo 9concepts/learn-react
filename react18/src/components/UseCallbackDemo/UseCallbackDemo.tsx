@@ -1,10 +1,16 @@
 import { useCallback, useState } from "react";
 import { Button } from "./Button";
 
-export const UseCallbackDemo = () => {
+const useCount = () => {
   const [count, setCount] = useState(0);
+
+  return [count, setCount] as const;
+};
+
+export const Counter = () => {
+  const [count, setCount] = useCount();
   const handleClick = useCallback(() => {
-    console.log(count)
+    setCount((prev) => prev + 1);
   }, []);
 
   return (
